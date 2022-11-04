@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add</title>
+    <script>
+        function check(){
+            alert("Check blanks.");
+            return true;
+        }
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        input[type=reset]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .col-25, .col-75, input[type=submit],input[type=reset] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Add Form</h2>
+
+<p>추가하고 싶은 도서를 추가해보세요!</p>
+
+<div class="container">
+    <form action="form_ok.jsp" method="post" onsubmit ="return validateForm()">
+        <div class="row">
+            <div class="col-25">
+                <label for="bid">BookID</label>
+            </div>
+            <div class="col-75">
+                <input type="int" id="bid" name="bid" placeholder="BookID..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="btitle">Title</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="btitle" name="btitle" placeholder="Book title..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="bauthor">Author</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="bauthor" name="bauthor" placeholder="Author..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="category">Category</label>
+            </div>
+            <div class="col-75">
+                <select id="category" name="category">
+                    <option id="c1" name="c1"value="education">Education</option>
+                    <option id="c2" name="c2"value="cooking">Cooking</option>
+                    <option id="c3" name="c3"value="hobby">Hobby</option>
+                    <option id="c4" name="c4"value="computer">Computer</option>
+                    <option id="c5" name="c5"value="science">Science</option>
+                    <option id="c6" name="c6"value="society">Society</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="bpub">Publisher</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="bpub" name="bpub" placeholder="Publisher..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="bprice">Price</label>
+            </div>
+            <div class="col-75">
+                <input type="double" id="bprice" name="bprice" placeholder="Price..">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
